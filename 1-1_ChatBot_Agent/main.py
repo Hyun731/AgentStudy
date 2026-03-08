@@ -73,14 +73,16 @@ class ChatBot():
         result = self.workflow.invoke(initial_state) #그래프 실행
 
         messages = result["messages"]
-        print(messages)
-        print("------------------")
-        print(messages[0])
-        print("------------------")
-        print(messages[0].content)
-        print(result)
+        # print(messages)
+        # print("------------------")
+        # print(messages[0])
+        # print("------------------")
+        # print(messages[0].content)
+        # print(result)
+        ai_message = messages[0].content
 
-        return "..."
+        return ai_message #이렇게 만든 챗봇은 메모리 기능도 없고 툴 기능 또한 없다.
+
 
 async def handler(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     if update.message is None or update.message.text is None:
